@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">UwaterlooPlus</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="tittle_something">Something</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_map">Map</string>
+    <string name="title_newAdventure">New</string>
+    <string name="tittle_character">Character</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
