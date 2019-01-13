@@ -137,7 +137,6 @@ public class LockedActivity extends AppCompatActivity {
 
     }
 
-
     //To make sure every time is saved
 
     @Override
