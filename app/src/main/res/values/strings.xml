@@ -25,5 +25,7 @@
     <string name="gpa">GPA</string>
     <string name="gp">4.0</string>
     <string name="map1">map1</string>
+    <string name="calendar">calendar</string>
+    <string name="main_pic">main_pic</string>
 
 </resources>
