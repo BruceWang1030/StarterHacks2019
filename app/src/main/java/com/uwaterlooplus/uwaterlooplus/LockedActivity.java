@@ -30,6 +30,7 @@ public class LockedActivity extends AppCompatActivity {
     private NotificationManager notificationManager;
     private NotificationChannel notificationChannel;
     private NotificationCompat.Builder mBuilder;
+    private int notificationId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class LockedActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        
+        notificationManager.notify(notificationId++, mBuilder.build());
     }
 
     @Override
@@ -84,7 +85,7 @@ public class LockedActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        notificationManager.notify(notificationId++, mBuilder.build());
     }
 
 //    public void startStop(){
