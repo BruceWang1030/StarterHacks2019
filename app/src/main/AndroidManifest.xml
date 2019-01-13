@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".LockedActivity"></activity>
+        <activity android:name=".LockedActivity" />
+        <activity android:name=".Kotlin.KotlinTestActivity"></activity>
     </application>
 
 </manifest>

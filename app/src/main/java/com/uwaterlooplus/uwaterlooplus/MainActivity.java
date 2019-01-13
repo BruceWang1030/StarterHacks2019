@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -37,22 +37,18 @@ public class MainActivity extends AppCompatActivity implements CalendarFragment.
             ImageView imgView = (ImageView)findViewById(R.id.main_picture);
             switch (item.getItemId()) {
                 case R.id.navigation_calendar:
-//                    mTextMessage.setText(R.string.title_calendar);
                     loadFragment(calendarFragment);
                     imgView .setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_map:
-//                    mTextMessage.setText(R.string.title_map);
                     loadFragment(mapFragment);
                     imgView .setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_newAdventure:
-//                    mTextMessage.setText(R.string.title_newAdventure);
                     loadFragment(newAdventureFragment);
                     imgView .setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_character:
-//                    mTextMessage.setText(R.string.tittle_character);
                     loadFragment(characterFragment);
                     imgView .setVisibility(View.INVISIBLE);
                     return true;
@@ -75,13 +71,16 @@ public class MainActivity extends AppCompatActivity implements CalendarFragment.
         characterFragment = new CharacterFragment();
         mapFragment = new MapFragment();
         newAdventureFragment = new NewAdventureFragment();
+
+        loadFragment(newAdventureFragment);
     }
 
     private void loadFragment(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        getFragmentManager().beginTransaction().replace(R.id.fl_container,fragment).addToBackStack(null).commit();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fl_container, fragment);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
 
     }
 
