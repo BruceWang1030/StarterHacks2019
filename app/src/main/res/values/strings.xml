@@ -6,8 +6,26 @@
     <string name="tittle_character">Character</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Character Fragment</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="character_full_pic">Character_full_pic</string>
+    <string name="bt_refresh">Refresh</string>
+    <string name="strength">Strength</string>
+    <string name="stn">A</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="Int">B</string>
+    <string name="defence">Defence</string>
+    <string name="def">C</string>
+    <string name="speed">Speed</string>
+    <string name="spd">D</string>
+    <string name="luck">Luck</string>
+    <string name="luk">E</string>
+    <string name="gpa">GPA</string>
+    <string name="gp">4.0</string>
+    <string name="map1">map1</string>
+    <string name="calendar">calendar</string>
+    <string name="main_pic">main_pic</string>
+
 </resources>

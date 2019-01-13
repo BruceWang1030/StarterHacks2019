@@ -1,5 +1,6 @@
 package com.uwaterlooplus.uwaterlooplus.Fragment;
 
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,8 +9,14 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Button;
 
 import com.uwaterlooplus.uwaterlooplus.R;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +26,11 @@ import com.uwaterlooplus.uwaterlooplus.R;
  * Use the {@link CharacterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CharacterFragment extends Fragment {
+public class CharacterFragment extends Fragment{
+
+    Button button_refresh;
+    TextView text_stn;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -66,6 +77,31 @@ public class CharacterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View myFragmentView = inflater.inflate(R.layout.fragment_character,container, false);
+
+        button_refresh = (Button) myFragmentView.findViewById(R.id.button_refresh);
+
+        text_stn = (TextView) myFragmentView.findViewById(R.id.text_stn);
+
+
+
+        button_refresh.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String text = "";
+                try{
+                    InputStream is = getResources().getAssets().open("character.txt");
+                    int size = is.available();
+                    byte[] buffer = new byte[size];
+                    is.read(buffer);
+                    is.close();
+                    text = new String(buffer);
+                }catch (IOException ex){
+                    ex.printStackTrace();
+                }
+                text_stn.setText(text);
+            }
+        });
         return inflater.inflate(R.layout.fragment_character, container, false);
     }
 
@@ -79,6 +115,7 @@ public class CharacterFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+
     }
 
     @Override
