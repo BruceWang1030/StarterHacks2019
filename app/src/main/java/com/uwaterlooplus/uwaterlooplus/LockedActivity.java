@@ -1,9 +1,12 @@
 package com.uwaterlooplus.uwaterlooplus;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,10 +27,29 @@ public class LockedActivity extends AppCompatActivity {
     private long mEndTime = System.currentTimeMillis() + timeLeftinMilliconds;
     private boolean timerRunning;
 
+    private NotificationManager notificationManager;
+    private NotificationChannel notificationChannel;
+    private NotificationCompat.Builder mBuilder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locked);
+
+        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        String channelId = "some_channel_id";
+        CharSequence channelName = "Some Channel";
+        int importance = NotificationManager.IMPORTANCE_LOW;
+        notificationChannel = new NotificationChannel(channelId, channelName, importance);
+
+        String textTitle = "Warning!";
+        String textContent = "Your mission will fail if you leave.";
+
+        mBuilder = new NotificationCompat.Builder(this, channelId)
+                .setContentTitle(textTitle)
+                .setContentText(textContent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         mTvTimerText = findViewById(R.id.textView_countdown);
         timerRunning = true;
@@ -42,6 +64,12 @@ public class LockedActivity extends AppCompatActivity {
 
         updateTimer();
         startTimer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        
     }
 
     @Override
@@ -138,5 +166,7 @@ public class LockedActivity extends AppCompatActivity {
     public static void setTimeLeftMilliconds (long inputMillisSeconds){
         timeLeftinMilliconds = inputMillisSeconds;
     }
+
+
 
 }
