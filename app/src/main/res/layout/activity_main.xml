@@ -7,14 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/message"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:text="@string/title_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        android:src="@drawable/logo1_pic" />
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
