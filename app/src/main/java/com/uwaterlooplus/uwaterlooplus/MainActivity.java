@@ -8,11 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-<<<<<<< Updated upstream
+
 import android.widget.CalendarView;
-=======
 import android.widget.Button;
->>>>>>> Stashed changes
 import android.widget.TextView;
 
 import com.uwaterlooplus.uwaterlooplus.Fragment.CalendarFragment;
@@ -66,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements CalendarFragment.
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-<<<<<<< Updated upstream
 //        Make instances for every fragment
         calendarFragment = new CalendarFragment();
         characterFragment = new CharacterFragment();
@@ -79,8 +76,7 @@ public class MainActivity extends AppCompatActivity implements CalendarFragment.
         transaction.replace(R.id.fl_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
-=======
->>>>>>> Stashed changes
+
     }
 
     @Override
