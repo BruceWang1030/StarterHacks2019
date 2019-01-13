@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.071">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/main_picture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/main_pic"

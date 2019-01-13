@@ -9,9 +9,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.uwaterlooplus.uwaterlooplus.Fragment.CalendarFragment;
 import com.uwaterlooplus.uwaterlooplus.Fragment.CharacterFragment;
@@ -33,22 +34,27 @@ public class MainActivity extends AppCompatActivity implements CalendarFragment.
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            ImageView imgView = (ImageView)findViewById(R.id.main_picture);
             switch (item.getItemId()) {
                 case R.id.navigation_calendar:
 //                    mTextMessage.setText(R.string.title_calendar);
                     loadFragment(calendarFragment);
+                    imgView .setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_map:
 //                    mTextMessage.setText(R.string.title_map);
                     loadFragment(mapFragment);
+                    imgView .setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_newAdventure:
 //                    mTextMessage.setText(R.string.title_newAdventure);
                     loadFragment(newAdventureFragment);
+                    imgView .setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_character:
 //                    mTextMessage.setText(R.string.tittle_character);
                     loadFragment(characterFragment);
+                    imgView .setVisibility(View.INVISIBLE);
                     return true;
             }
             return false;
